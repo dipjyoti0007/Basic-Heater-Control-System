@@ -1,6 +1,3 @@
-CODE :
-
-
 #include <DHTesp.h>
 #include <LiquidCrystal_I2C.h>
 
