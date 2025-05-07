@@ -1,45 +1,54 @@
 🔥 Heater Control System with State Machine using ESP32
 This project simulates a smart heater control system built on the ESP32 platform, designed to manage temperature levels efficiently using real-time sensor feedback and state-based logic. It uses a DHT22 sensor to monitor temperature and humidity, and actuates a heater, fan, and buzzer accordingly, while displaying the system state on a 16x4 I2C LCD display.
 
+
+
 🚀 Features
-Real-time temperature and humidity monitoring using DHT22
 
-Heater and fan control based on temperature thresholds
+-- Real-time temperature and humidity monitoring using DHT22
 
-State-based logic system:
+-- Heater and fan control based on temperature thresholds
 
-IDLE: System inactive
+-- State-based logic system:
 
-HEATING: Temperature below target
+---- IDLE: System inactive
 
-STABILIZING: Approaching target
+---- HEATING: Temperature below target
 
-TARGET_REACHED: Desired temperature maintained
+---- STABILIZING: Approaching target
 
-OVERHEAT: Safety shutdown with fan & buzzer alert
+---- TARGET_REACHED: Desired temperature maintained
 
-Visual feedback on LCD and Serial Monitor
+---- OVERHEAT: Safety shutdown with fan & buzzer alert
 
-Auditory alert via active buzzer on overheat
+-- Visual feedback on LCD and Serial Monitor
 
-Simulation-ready using Wokwi for virtual testing
+-- Auditory alert via active buzzer on overheat
+
+-- Simulation-ready using Wokwi for virtual testing
+
+
 
 🧰 Hardware Components
-ESP32 Dev Board
 
-DHT22 Temperature and Humidity Sensor
+- ESP32 Dev Board
 
-I2C 16x4 LCD
+- DHT22 Temperature and Humidity Sensor
 
-Active Buzzer
+- I2C 16x4 LCD
 
-2× LEDs or relays (to simulate fan and heater)
+- Active Buzzer
+
+- 2× relays (to simulate fan and heater)
+
+
 
 🔄 Operation
-Continuously reads temperature and humidity every second.
 
-Based on temperature, the system transitions through five states using a finite state machine (FSM).
+* Continuously reads temperature and humidity every second.
 
-The LCD displays current temperature, humidity, heater/fan status, and active state.
+* Based on temperature, the system transitions through five states using a finite state machine (FSM).
 
-An overheat condition (>35°C) triggers a buzzer and fan for safety.
+* The LCD displays current temperature, humidity, heater/fan status, and active state.
+
+* An overheat condition (>35°C) triggers a buzzer and fan for safety.
