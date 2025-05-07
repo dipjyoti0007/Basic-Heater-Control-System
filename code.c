@@ -4,7 +4,7 @@
 const int DHT_PIN = 15;
 const int fanPin = 2;
 const int heaterPin = 4;
-const int buzzerPin = 5; // Optional: Active buzzer connected here
+const int buzzerPin = 5; 
 
 const float TARGET_TEMP = 25.0;
 const float OVERHEAT_TEMP = 35.0;
