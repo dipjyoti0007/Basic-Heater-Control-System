@@ -1,4 +1,5 @@
 # 🔥 Smart Heater Control System using ESP32 🌡️💨
+*Project for upliance.ai (https://upliance.ai/?srsltid=AfmBOoqaXwpgha1sDLENXtZ07TLbJTEJi1c0p-KKkMcSN8Pf2yfajjCP)*  
 
 > ⚙️ **Intelligent, safety-first heater controller** built using the ESP32 platform, integrating **real-time sensor feedback** and **finite state machine (FSM)** logic for smart temperature management.  
 > Simulate easily on **Wokwi** or deploy with real hardware. 🧠🔧
@@ -73,9 +74,8 @@
 ---
 
 ## 🔬 Simulation Ready
-
-🔧 Try the project directly on [Wokwi](https://wokwi.com/) — no hardware needed!  
-🧪 Perfect for testing, debugging, or demo presentations.
+ 
+🧪 Perfect for testing, debugging, or demo presentations for real system development.
 
 ---
 
