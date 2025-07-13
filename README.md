@@ -1,54 +1,89 @@
-🔥 Heater Control System with State Machine using ESP32
-This project simulates a smart heater control system built on the ESP32 platform, designed to manage temperature levels efficiently using real-time sensor feedback and state-based logic. It uses a DHT22 sensor to monitor temperature and humidity, and actuates a heater, fan, and buzzer accordingly, while displaying the system state on a 16x4 I2C LCD display.
+# 🔥 Smart Heater Control System using ESP32 🌡️💨
+
+> ⚙️ **Intelligent, safety-first heater controller** built using the ESP32 platform, integrating **real-time sensor feedback** and **finite state machine (FSM)** logic for smart temperature management.  
+> Simulate easily on **Wokwi** or deploy with real hardware. 🧠🔧
+
+---
+
+## 🚀 Features At a Glance
+
+✅ **Real-time** temperature & humidity monitoring via **DHT22**  
+🔥 **Heater & Fan Control** based on dynamic thresholds  
+🧠 **State Machine Logic** with 5 operational modes  
+📺 **LCD Display (I2C 16x4)** for live feedback  
+🔊 **Auditory Alerts** using active buzzer in OVERHEAT state  
+💻 Output to **Serial Monitor** for debugging  
+🧪 **Simulation-ready** via [Wokwi](https://wokwi.com/)
+
+---
+
+## 🎯 System States
+
+| 💡 State Name     | 🔍 Description                                          |
+|------------------|---------------------------------------------------------|
+| 💤 **IDLE**        | System waiting, no heater/fan activity                 |
+| 🔥 **HEATING**     | Temperature below threshold — heater is ON             |
+| 🟡 **STABILIZING** | Near target temp — heater cycles to stabilize          |
+| ✅ **TARGET_REACHED** | Desired temp reached — heater/fan OFF                |
+| 🚨 **OVERHEAT**    | Temp > 35°C — activates fan & buzzer for safety       |
+
+> FSM transitions ensure smooth and intelligent state changes based on environment conditions.
+
+---
+
+## 🧰 Required Components
+
+| 🧩 Component                 | 🔎 Purpose                                  |
+|-----------------------------|---------------------------------------------|
+| 🧠 **ESP32 Dev Board**        | Central microcontroller                     |
+| 🌡️ **DHT22 Sensor**           | Measures temp & humidity                    |
+| 📺 **16x4 I2C LCD**           | Displays current readings & system state    |
+| 🔊 **Active Buzzer**          | Beeps on overheat                           |
+| ⚙️ **Relay Modules x2**       | Simulates heater and fan control            |
+
+---
+
+## 🔄 How It Works
+
+1. 📥 **Sensor Reading**  
+   Reads temp & humidity every 1 second.
+
+2. 🧠 **State Evaluation (FSM)**  
+   Determines which state the system should be in:
+   - `IDLE` → `HEATING` → `STABILIZING` → `TARGET_REACHED` → `OVERHEAT`
+
+3. 🔁 **Actuation**  
+   - 🔥 **Heater ON** if temp < lower limit  
+   - 💨 **Fan ON + Buzzer** if temp > 35°C  
+   - ✅ All OFF when in target range
+
+4. 📺 **LCD & Serial Output**  
+   - Live temperature, humidity, state, and actuator status
+
+---
+
+## 📊 LCD Display Layout
+
+| Temp: 28.4°C Hum: 55% |
+| State: HEATING |
+| Heater: ON Fan: OFF |
+| Buzzer: OFF |
 
 
+---
 
-🚀 Features
+## 🔬 Simulation Ready
 
--- Real-time temperature and humidity monitoring using DHT22
+🔧 Try the project directly on [Wokwi](https://wokwi.com/) — no hardware needed!  
+🧪 Perfect for testing, debugging, or demo presentations.
 
--- Heater and fan control based on temperature thresholds
+---
 
--- State-based logic system:
+## 🧠 Applications
 
----- IDLE: System inactive
+- 🏠 Smart home heater automation  
+- 🧪 Lab incubator monitoring  
+- 🌡️ Climate-controlled storage rooms  
+- 🎓 Educational FSM projects using ESP32
 
----- HEATING: Temperature below target
-
----- STABILIZING: Approaching target
-
----- TARGET_REACHED: Desired temperature maintained
-
----- OVERHEAT: Safety shutdown with fan & buzzer alert
-
--- Visual feedback on LCD and Serial Monitor
-
--- Auditory alert via active buzzer on overheat
-
--- Simulation-ready using Wokwi for virtual testing
-
-
-
-🧰 Hardware Components
-
-- ESP32 Dev Board
-
-- DHT22 Temperature and Humidity Sensor
-
-- I2C 16x4 LCD
-
-- Active Buzzer
-
-- 2× relays (to simulate fan and heater)
-
-
-
-🔄 Operation
-
-* Continuously reads temperature and humidity every second.
-
-* Based on temperature, the system transitions through five states using a finite state machine (FSM).
-
-* The LCD displays current temperature, humidity, heater/fan status, and active state.
-
-* An overheat condition (>35°C) triggers a buzzer and fan for safety.
+---
